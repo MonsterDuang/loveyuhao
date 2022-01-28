@@ -7,7 +7,7 @@ $(() => {
   $(".year").text(new Date().getFullYear());
 
   const perfect = $("#perfect")[0];
-  perfect.play();
+  // perfect.play();
   let start = 0, speed = 1, isRotate = false;
   var timer = null;
   const rotateFn = () => {
@@ -17,7 +17,7 @@ $(() => {
       $(".musicicon img").css("transform", `rotate(${start}deg)`);
     }, 10);
   };
-  rotateFn();
+  // rotateFn();
   $(".musicicon img").on("click", () => {
     if (isRotate) {
       clearInterval(timer);
