@@ -38,11 +38,12 @@ const formatDate = (yh) => {
   if (yh) date = today;
   let year = date.getFullYear() - 1970;
   let month = date.getMonth();
+  let day = date.getDate() - 1;
   if (yh) {
     year = date.getFullYear();
     month = date.getMonth() + 1;
+    day = date.getDate();
   }
-  const day = date.getDate();
   const hour = date.getHours();
   const min = date.getMinutes();
   const sec = date.getSeconds();
