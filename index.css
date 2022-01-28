@@ -20,13 +20,13 @@ html, body{
   z-index: 99;
   padding: 0 40rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
-.today{
+.note{
   color: #666;
   font-size: 28rem;
   font-style: italic;
+  line-height: 42rem;
 }
 .musicicon img{
   width: 60rem;
