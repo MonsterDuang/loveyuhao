@@ -24,9 +24,9 @@ html, body{
 }
 .note{
   color: #666;
-  font-size: 28rem;
+  font-size: 32rem;
   font-style: italic;
-  line-height: 42rem;
+  line-height: 44rem;
 }
 .musicicon img{
   width: 60rem;
@@ -43,7 +43,7 @@ html, body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-size: 32rem;
+  font-size: 36rem;
   color: #000;
 }
 .times{
@@ -54,7 +54,7 @@ html, body{
 }
 .togethertimes .times b{
   color: brown;
-  font-size: 52rem;
+  font-size: 58rem;
   font-style: italic;
 }
 .togethertimes .wife span{
