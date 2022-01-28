@@ -1,13 +1,12 @@
 $(() => {
-  const bgcolor = ["aliceblue", "aquamarine", "blanchedalmond", "burlywood", "cornflowerblue", "darkgoldenrod", "deepskyblue", "darkorange"];
-  const randomnum = Math.floor(Math.random() * 9);
+  const bgcolor = ["burlywood", "cornflowerblue", "darkgoldenrod", "deepskyblue", "darkorange", "aquamarine"];
+  const randomnum = Math.floor(Math.random() * 6);
   $(".content").css("background-color", bgcolor[randomnum]);
 
-  $(".today").text(`今天是${formatDate(1)}`);
+  $(".today").text(`- 今天是${formatDate(1)}...`);
   $(".year").text(new Date().getFullYear());
 
   const perfect = $("#perfect")[0];
-  // perfect.play();
   let start = 0, speed = 1, isRotate = false;
   var timer = null;
   const rotateFn = () => {
@@ -17,7 +16,6 @@ $(() => {
       $(".musicicon img").css("transform", `rotate(${start}deg)`);
     }, 10);
   };
-  // rotateFn();
   $(".musicicon img").on("click", () => {
     if (isRotate) {
       clearInterval(timer);
