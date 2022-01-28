@@ -71,6 +71,7 @@ html, body{
   width: 100%;
   color: #fff;
   font-size: 28rem;
+  font-style: italic;
 }
 #perfect{
   display: none;
