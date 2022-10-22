@@ -30,3 +30,7 @@
   border-radius: 10rem;
   padding: 0 10rem;
 }
+.toolsitem{
+  display: flex;
+  align-items: center;
+}
