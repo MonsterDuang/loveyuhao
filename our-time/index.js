@@ -18,9 +18,30 @@ $(() => {
   $("#calc").on("click", () => {
     const date = $("#date").val();
     const count = $("#count").val();
-    if (date && count)
-      $("#result").text("结果：" + formatDate(date, count));
-  })
+    if (!date) return alert("请选择日期！");
+    if (!count) return alert("请输入天数！");
+    $("#result").text("结果：" + formatDate(date, count));
+  });
+  $("#reset").on("click", () => {
+    $("#date").val("");
+    $("#count").val("");
+  });
+  $("#calc2").on("click", () => {
+    const satrtDate = $("#startDate").val();
+    const endDate = $("#endDate").val();
+    if (!satrtDate) return alert("请选择开始日期！");
+    if (!endDate) return alert("请选择结束日期！");
+    const start = new Date(satrtDate).getTime();
+    const end = new Date(endDate).getTime();
+    if (start > end) return alert("开始时间不能大于结束时间！");
+    const diff = end - start;
+    const count = diff / 1000 / 60 / 60 / 24;
+    $("#result2").text(`相差天数：${count}天`);
+  });
+});
+$("#reset").on("click", () => {
+  $("#startDate").val("");
+  $("#endDate").val("");
 });
 const formatDate = (dt, count) => {
   let date = new Date();
