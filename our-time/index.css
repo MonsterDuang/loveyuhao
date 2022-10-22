@@ -4,7 +4,7 @@
 }
 .tools{
   font-size: 32rem;
-  border-top: 1rem solid #eee;
+  border-top: 1rem solid #000;
   margin-top: 30rem;
 }
 .title{
@@ -23,6 +23,7 @@
   margin-right: 10rem;
 }
 .date, .count{
+  width: 399rem;
   height: 56rem;
   background-color: #eee;
   border: 1rem solid #eee;

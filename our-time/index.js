@@ -18,7 +18,8 @@ $(() => {
   $("#calc").on("click", () => {
     const date = $("#date").val();
     const count = $("#count").val();
-    $("#result").text("结果：" + formatDate(date, count));
+    if (date && count)
+      $("#result").text("结果：" + formatDate(date, count));
   })
 });
 const formatDate = (dt, count) => {
