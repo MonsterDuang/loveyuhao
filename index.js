@@ -27,7 +27,7 @@ $(() => {
     $(".togethertimes .times").html(formatDate());
   }, 1000);
   $(".copyright").on("click", () => {
-    location.pathname = '/our-time';
+    location.pathname = '/loveyuhao/our-time';
   });
 });
 const formatDate = (yh) => {

@@ -62,7 +62,7 @@ $(() => {
     $("#result2").text("");
   });
   $(".copyright").on("click", () => {
-    location.pathname = '/';
+    location.pathname = '/loveyuhao';
   });
 });
 const calc = (diff) => {
