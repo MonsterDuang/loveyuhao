@@ -46,3 +46,6 @@
   display: flex;
   align-items: center;
 }
+b{
+  text-decoration: underline;
+}
