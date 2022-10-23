@@ -1,6 +1,6 @@
 $(() => {
   const randomnum = Math.floor(Math.random() * 15);
-  $(".content").css("background-image", `url(/bg/${randomnum}.png)`);
+  $(".content").css("background-image", `url(../bg/${randomnum}.png)`);
   $(".today").text(`- 今天是${formatDate()}...`);
   const today = new Date();
   const todaytime = today.getTime();
