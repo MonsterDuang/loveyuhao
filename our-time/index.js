@@ -20,12 +20,12 @@ $(() => {
   $(".surprisebaby").html(babystr);
   if (marrstr || lovestr || babystr) $("head").append("<link rel='stylesheet' href='./fireworks.css'>");
   const marriage = formatDate('2022-05-30');
-  $(".marriage").html(`- 我们结婚<b>${marriage.year&&marriage.year+'年'}${marriage.month&&marriage.month+'个月'}${marriage.day&&marriage.day+'天'}</b>了!!!`);
+  $(".marriage").html(`- 我们结婚<b>${marriage.year&&marriage.year+'年'}${marriage.month&&marriage.month+'个月'}${marriage.day&&marriage.day+'天'}</b>啦!!!`);
   $(".marr100").html(`- 结婚百日纪念：<b>${formatDate('2022-05-30', 100)}</b>!!!`);
   $(".marr1k").html(`- 结婚千日纪念：<b>${formatDate('2022-05-30', 1000)}</b>!!!`);
   $(".marr1w").html(`- 结婚万日纪念：<b>${formatDate('2022-05-30', 10000)}</b>!!!`);
   const babyborn = formatDate('2022-09-27');
-  $(".babyborn").html(`- 我们宝宝出生<b>${babyborn.year&&babyborn.year+'岁'}${babyborn.month&&babyborn.month+'个月'}${babyborn.day&&babyborn.day+'天'}</b>了!!!`);
+  $(".babyborn").html(`- 我们宝宝出生<b>${babyborn.year&&babyborn.year+'岁'}${babyborn.month&&babyborn.month+'个月'}${babyborn.day&&babyborn.day+'天'}</b>啦!!!`);
   $(".baby30").html(`- 宝宝满月纪念：<b>${formatDate('2022-09-27', 30)}</b>!!!`);
   $(".baby100").html(`- 宝宝百日纪念：<b>${formatDate('2022-09-27', 100)}</b>!!!`);
   $(".baby1k").html(`- 宝宝千日纪念：<b>${formatDate('2022-09-27', 1000)}</b>!!!`);
