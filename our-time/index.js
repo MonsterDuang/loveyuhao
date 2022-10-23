@@ -1,8 +1,24 @@
 $(() => {
-  const bgcolor = ["burlywood", "cornflowerblue", "darkgoldenrod", "deepskyblue", "darkorange", "aquamarine"];
-  const randomnum = Math.floor(Math.random() * 6);
-  $(".content").css("background-color", bgcolor[randomnum]);
+  const randomnum = Math.floor(Math.random() * 15);
+  $(".content").css("background-image", `url(/bg/${randomnum}.png)`);
   $(".today").text(`- 今天是${formatDate()}...`);
+  const today = new Date();
+  const todaytime = today.getTime();
+  const curYear = today.getFullYear();
+  const curMonth = today.getMonth() + 1;
+  const curDay = today.getDate();
+  const marrstr = curMonth == 5 && curDay == 30 ? `- 今天是我们结婚<b>${toChinesNum(curYear - 2022)}周年</b>纪念!!!` : '';
+  $(".surprisemarr").html(marrstr);
+  const lovedaytime = new Date("2022-05-30").getTime();
+  const lovediff = Math.floor(calc(todaytime - lovedaytime));
+  const loveOpt = [520, 1024, 1314, 2048, 5200, 10000];
+  const lovestr = loveOpt.includes(lovediff) ? `- 今天我们结婚<b>${lovediff}</b>天啦!!!` : '';
+  $(".surpriselove").html(lovestr);
+  const babyborntime = new Date("2022-09-27").getTime();
+  const babydiff = Math.floor(calc(todaytime - babyborntime));
+  const babystr = (babydiff == 30 || babydiff % 100 == 0) ? `- 今天我们宝宝<b>${babydiff == 30 ? '满月' : babydiff + '天'}</b>啦!!!` : '';
+  $(".surprisebaby").html(babystr);
+  if (marrstr || lovestr || babystr) $("head").append("<link rel='stylesheet' href='./fireworks.css'>");
   const marriage = formatDate('2022-05-30');
   $(".marriage").html(`- 我们结婚<b>${marriage.year&&marriage.year+'年'}${marriage.month&&marriage.month+'个月'}${marriage.day&&marriage.day+'天'}</b>了!!!`);
   $(".marr100").html(`- 结婚百日纪念：<b>${formatDate('2022-05-30', 100)}</b>!!!`);
@@ -10,6 +26,7 @@ $(() => {
   $(".marr1w").html(`- 结婚万日纪念：<b>${formatDate('2022-05-30', 10000)}</b>!!!`);
   const babyborn = formatDate('2022-09-27');
   $(".babyborn").html(`- 我们宝宝出生<b>${babyborn.year&&babyborn.year+'岁'}${babyborn.month&&babyborn.month+'个月'}${babyborn.day&&babyborn.day+'天'}</b>了!!!`);
+  $(".baby30").html(`- 宝宝满月纪念：<b>${formatDate('2022-09-27', 30)}</b>!!!`);
   $(".baby100").html(`- 宝宝百日纪念：<b>${formatDate('2022-09-27', 100)}</b>!!!`);
   $(".baby1k").html(`- 宝宝千日纪念：<b>${formatDate('2022-09-27', 1000)}</b>!!!`);
   $(".baby1w").html(`- 宝宝万日纪念：<b>${formatDate('2022-09-27', 10000)}</b>!!!`);
@@ -36,15 +53,21 @@ $(() => {
     const end = new Date(endDate).getTime();
     if (start > end) return alert("开始时间不能大于结束时间！");
     const diff = end - start;
-    const count = diff / 1000 / 60 / 60 / 24;
+    const count = calc(diff);
     $("#result2").text(`相差天数：${count}天`);
   });
+  $("#reset2").on("click", () => {
+    $("#startDate").val("");
+    $("#endDate").val("");
+    $("#result2").text("");
+  });
+  $(".copyright").on("click", () => {
+    location.pathname = '/';
+  });
 });
-$("#reset2").on("click", () => {
-  $("#startDate").val("");
-  $("#endDate").val("");
-  $("#result2").text("");
-});
+const calc = (diff) => {
+  return diff / 1000 / 60 / 60 / 24;
+}
 const formatDate = (dt, count) => {
   let date = new Date();
   if (dt) date = new Date(new Date().getTime() - new Date(dt).getTime());
@@ -60,4 +83,47 @@ const formatDate = (dt, count) => {
     year: formatYear == '00' ? '' : formatYear, 
     month: formatMonth == '00' ? '' : formatMonth, 
     day: formatDay == '00' ? '' : formatDay};
+}
+/* *
+ * 数字转成汉字
+ * @params num === 要转换的数字
+ * @return 汉字
+ * */
+const toChinesNum = (num) =>  {
+  const changeNum = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九']
+  const unit = ['', '十', '百', '千', '万']
+  num = parseInt(num)
+  const getWan = (temp) => {
+    const strArr = temp.toString().split('').reverse()
+    let newNum = ''
+    let newArr = []
+    strArr.forEach((item, index) => {
+      newArr.unshift(item === '0' ? changeNum[item] : changeNum[item] + unit[index])
+    })
+    let numArr = []
+    newArr.forEach((m, n) => {
+      if (m !== '零') numArr.push(n)
+    })
+    if (newArr.length > 1) {
+      newArr.forEach((m, n) => {
+        if (newArr[newArr.length - 1] === '零') {
+          if (n <= numArr[numArr.length - 1]) {
+            newNum += m
+          }
+        } else {
+          newNum += m
+        }
+      })
+    } else {
+      newNum = newArr[0]
+    }
+
+    return newNum
+  }
+  let overWan = Math.floor(num / 10000)
+  let noWan = num % 10000
+  if (noWan.toString().length < 4) {
+    noWan = '0' + noWan
+  }
+  return overWan ? getWan(overWan) + '万' + getWan(noWan) : getWan(num)
 }

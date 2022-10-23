@@ -1,6 +1,18 @@
+.content{
+  min-height: 100%;
+  overflow-x: hidden;
+}
+.copyright{
+  position: unset;
+  margin-top: 50rem;
+}
 .note, .tools{
-  color: #333;
-  line-height: 50rem;
+  color: #fff;
+  line-height: 60rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20rem;
+  border-radius: 10rem;
+  margin-bottom: 20rem;
 }
 .line{
   margin: 30rem 0;
@@ -10,7 +22,7 @@
   font-size: 32rem;
 }
 .btn{
-  margin: 20rem 0;
+  margin: 20rem 0 0;
 }
 .btn span{
   padding: 10rem 20rem;

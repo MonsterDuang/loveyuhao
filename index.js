@@ -1,11 +1,8 @@
 $(() => {
-  const bgcolor = ["burlywood", "cornflowerblue", "darkgoldenrod", "deepskyblue", "darkorange", "aquamarine"];
-  const randomnum = Math.floor(Math.random() * 6);
-  $(".content").css("background-color", bgcolor[randomnum]);
-
+  const randomnum = Math.floor(Math.random() * 15);
+  $(".content").css("background-image", `url(/bg/${randomnum}.png)`);
   $(".today").text(`- 今天是${formatDate(1)}...`);
   $(".year").text(new Date().getFullYear());
-
   const perfect = $("#perfect")[0];
   let start = 0, speed = 1, isRotate = false;
   var timer = null;
@@ -29,8 +26,10 @@ $(() => {
   setInterval(() => {
     $(".togethertimes .times").html(formatDate());
   }, 1000);
+  $(".copyright").on("click", () => {
+    location.pathname = '/our-time';
+  });
 });
-
 const formatDate = (yh) => {
   const loveday = new Date('2021-12-05');
   const today = new Date();

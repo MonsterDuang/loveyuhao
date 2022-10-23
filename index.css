@@ -12,6 +12,11 @@ html, body{
   width: 100%;
   height: 100%;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 .musicicon{
   width: 100%;
@@ -23,7 +28,7 @@ html, body{
   justify-content: space-between;
 }
 .note{
-  color: #666;
+  color: #fff;
   font-size: 32rem;
   font-style: italic;
   line-height: 44rem;
@@ -44,7 +49,7 @@ html, body{
   justify-content: center;
   flex-direction: column;
   font-size: 36rem;
-  color: #000;
+  color: #fff;
 }
 .times{
   display: flex;
@@ -53,7 +58,7 @@ html, body{
   flex-direction: column;
 }
 .togethertimes .times b{
-  color: brown;
+  color: gold;
   font-size: 58rem;
   font-style: italic;
 }
