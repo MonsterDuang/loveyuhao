@@ -1,7 +1,7 @@
 $(() => {
   const randomnum = Math.floor(Math.random() * 15);
   $(".content").css("background-image", `url(../bg/${randomnum}.png)`);
-  $(".today").text(`- 今天是${formatDate()}...`);
+  $(".today").text(`- 今天是<b>${formatDate()}</b>...`);
   const today = new Date();
   const todaytime = today.getTime();
   const curYear = today.getFullYear();
