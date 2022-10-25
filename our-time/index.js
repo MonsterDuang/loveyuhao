@@ -9,6 +9,8 @@ $(() => {
   const curDay = today.getDate();
   const marrstr = curMonth == 5 && curDay == 30 ? `- 今天是我们结婚<b>${toChinesNum(curYear - 2022)}周年</b>纪念!!!` : '';
   $(".surprisemarr").html(marrstr);
+  const birthstr = curMonth == 9 && curDay == 27 ? `- 今天是我们朗朗<b>${toChinesNum(curYear - 2022)}周岁</b>生日!!!` : '';
+  $(".surprisebirth").html(birthstr);
   const lovedaytime = new Date("2022-05-30").getTime();
   const lovediff = Math.floor(calc(todaytime - lovedaytime));
   const loveOpt = [520, 1024, 1314, 2048, 5200, 10000];
