@@ -20,7 +20,7 @@ $(() => {
   const babydiff = Math.floor(calc(todaytime - babyborntime));
   const babystr = (babydiff == 30 || babydiff % 100 == 0) ? `- 今天我们宝宝<b>${babydiff == 30 ? '满月' : babydiff + '天'}</b>啦!!!` : '';
   $(".surprisebaby").html(babystr);
-  if (marrstr || lovestr || babystr) $("head").append("<link rel='stylesheet' href='./fireworks.css'>");
+  if (marrstr || lovestr || babystr || birthstr) $("head").append("<link rel='stylesheet' href='./fireworks.css'>");
   const marriage = formatDate('2022-05-30');
   $(".marriage").html(`- 我们结婚<b>${marriage.year&&marriage.year+'年'}${marriage.month&&marriage.month+'个月'}${marriage.day&&marriage.day+'天'}</b>啦!!!`);
   $(".marr100").html(`- 结婚百日纪念：<b>${formatDate('2022-05-30', 100)}</b>!!!`);
