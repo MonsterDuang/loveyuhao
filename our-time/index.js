@@ -9,7 +9,7 @@ $(() => {
   const curDay = today.getDate();
   const marrstr = curMonth == 5 && curDay == 30 ? `- 今天是我们结婚<b>${toChinesNum(curYear - 2022)}周年</b>纪念!!!` : '';
   $(".surprisemarr").html(marrstr);
-  const birthstr = curMonth == 9 && curDay == 27 ? `- 今天是我们朗朗<b>${toChinesNum(curYear - 2022)}周岁</b>生日!!!` : '';
+  const birthstr = curMonth == 9 && curDay == 27 ? `- 今天是我们朗朗<b>${toChinesNum(curYear - 2022)}周岁</b>生日!!!` : curMonth == 2 && curDay == 17 ? `- 今天是亲爱的老婆<b>${toChinesNum(curYear - 1998)}周岁</b>生日!!!` : '';
   $(".surprisebirth").html(birthstr);
   const lovedaytime = new Date("2022-05-30").getTime();
   const lovediff = Math.floor(calc(todaytime - lovedaytime));
