@@ -2,7 +2,7 @@ $(() => {
   const randomnum = Math.floor(Math.random() * 15);
   $(".content").css("background-image", `url(../bg/${randomnum}.png)`);
   $(".today").html(`- 今天是<b>${formatDate()}</b>...`);
-  const today = new Date();
+  const today = new Date(formatDate(0, 0, 1));
   const todaytime = today.getTime();
   const curYear = today.getFullYear();
   const curMonth = today.getMonth() + 1;
