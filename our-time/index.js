@@ -80,7 +80,7 @@ const formatDate = (dt, count) => {
   const formatYear = year < 10 ? `0${year}` : year;
   const formatMonth = month < 10 ? `0${month}` : month;
   const formatDay = day < 10 ? `0${day}` : day;
-  if ((!dt || count) && isLocal) return `${formatYear}年${formatMonth}月${formatDay}日`;
+  if ((!dt || count) && !isLocal) return `${formatYear}年${formatMonth}月${formatDay}日`;
   if (isLocal) return `${formatYear}-${formatMonth}-${formatDay}`;
   return {
     year: formatYear == '00' ? '' : formatYear, 
