@@ -70,7 +70,7 @@ $(() => {
 const calc = (diff) => {
   return diff / 1000 / 60 / 60 / 24;
 }
-const formatDate = (dt, count) => {
+const formatDate = (dt, count, isLocal) => {
   let date = new Date();
   if (dt) date = new Date(new Date().getTime() - new Date(dt).getTime());
   if (count) date = new Date(new Date(dt).getTime() + count * 24 * 60 * 60 * 1000);
