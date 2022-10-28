@@ -82,7 +82,11 @@ const formatDate = (dt, count, isLocal) => {
   const formatDay = day < 10 ? `0${day}` : day;
   if ((!dt || count) && !isLocal) return `${formatYear}年${formatMonth}月${formatDay}日`;
   if (isLocal) return `${formatYear}-${formatMonth}-${formatDay}`;
-  return { year, month, day };
+  return {
+    year: formatYear == '00' ? '' : formatYear, 
+    month: formatMonth == '00' ? '' : formatMonth, 
+    day: formatDay == '00' ? '' : formatDay
+  };
 }
 /* *
  * 数字转成汉字
