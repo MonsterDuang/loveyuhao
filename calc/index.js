@@ -38,7 +38,7 @@ $("#calc").on("click", () => {
   let html = "";
   for (let i = 0; i < data.length; i++) {
     html += `<div class="note">
-        <div>- ${data[i].year}年${data[i].month}月</div>
+        <div>${data[i].year}年${data[i].month >= 10 ? data[i].month : "0" + data[i].month}月</div>
         <div>- 本月余额：<b>￥${(data[i].amount).toFixed(2)}</b></div>
         <div>- 本月存款：<b>￥${(data[i].curdeposit).toFixed(2)}</b></div>
         <div>- 累计存款：<b>￥${(data[i].alldeposit).toFixed(2)}</b></div>
