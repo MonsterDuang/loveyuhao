@@ -1,51 +1,53 @@
-.content{
-  min-height: 100%;
-  overflow-x: hidden;
+.content {
+	min-height: 100%;
+	overflow-x: hidden;
 }
-.copyright{
-  position: unset;
-  margin-top: 50rem;
+.copyright {
+	position: unset;
+	margin-top: 50rem;
 }
-.note, .tools{
-  color: #fff;
-  line-height: 60rem;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 20rem;
-  border-radius: 20rem;
-  margin-bottom: 20rem;
+.note,
+.tools {
+	color: #fff;
+	line-height: 60rem;
+	background-color: rgba(0, 0, 0, 0.3);
+	padding: 20rem;
+	border-radius: 20rem;
+	margin-bottom: 20rem;
 }
-.line{
-  margin: 30rem 0;
-  border-top: 1rem solid #000;
+.line {
+	margin: 30rem 0;
+	border-top: 1rem solid #000;
 }
-.tools{
-  font-size: 32rem;
+.tools {
+	font-size: 32rem;
 }
-.btn{
-  margin: 20rem 0 0;
+.btn {
+	margin: 20rem 0 0;
 }
-.btn span{
-  padding: 10rem 20rem;
-  border-radius: 10rem;
-  background-color: black;
-  color: #fff;
-  font-size: 28rem;
-  margin-right: 10rem;
+.btn span {
+	padding: 10rem 20rem;
+	border-radius: 10rem;
+	background-color: black;
+	color: #fff;
+	font-size: 28rem;
+	margin-right: 10rem;
 }
-.date, .count{
-  width: 399rem;
-  height: 56rem;
-  background-color: #eee;
-  border: 1rem solid #eee;
-  border-radius: 10rem;
-  padding: 0 10rem;
-  text-align: center;
-  font-size: 28rem;
+.date,
+.count {
+	width: 399rem;
+	height: 56rem;
+	background-color: #eee;
+	border: 1rem solid #eee;
+	border-radius: 10rem;
+	padding: 0 10rem;
+	text-align: center;
+	font-size: 28rem;
 }
-.toolsitem{
-  display: flex;
-  align-items: center;
+.toolsitem {
+	display: flex;
+	align-items: center;
 }
-b{
-  text-decoration: underline;
+b {
+	text-decoration: underline;
 }

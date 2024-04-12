@@ -22,12 +22,12 @@ $(() => {
   $(".surprisebaby").html(babystr);
   if (marrstr || lovestr || babystr || birthstr) $("head").append("<link rel='stylesheet' href='./fireworks.css'>");
   const marriage = formatDate('2022-05-30');
-  $(".marriage").html(`- 我们结婚<b>${marriage.year&&marriage.year+'年'}${marriage.month&&marriage.month+'个月'}${marriage.day&&marriage.day+'天'}</b>啦!!!`);
+  $(".marriage").html(`- 我们结婚<b>${marriage.year && marriage.year + '年'}${marriage.month && marriage.month + '个月'}${marriage.day && marriage.day + '天'}</b>啦!!!`);
   $(".marr100").html(`- 结婚百日纪念：<b>${formatDate('2022-05-30', 100)}</b>!!!`);
   $(".marr1k").html(`- 结婚千日纪念：<b>${formatDate('2022-05-30', 1000)}</b>!!!`);
   $(".marr1w").html(`- 结婚万日纪念：<b>${formatDate('2022-05-30', 10000)}</b>!!!`);
   const babyborn = formatDate('2022-09-27');
-  $(".babyborn").html(`- 我们宝宝出生<b>${babyborn.year&&babyborn.year+'岁'}${babyborn.month&&babyborn.month+'个月'}${babyborn.day&&babyborn.day+'天'}</b>啦!!!`);
+  $(".babyborn").html(`- 我们宝宝出生<b>${babyborn.year && babyborn.year + '岁'}${babyborn.month && babyborn.month + '个月'}${babyborn.day && babyborn.day + '天'}</b>啦!!!`);
   $(".baby30").html(`- 宝宝满月纪念：<b>${formatDate('2022-09-27', 30)}</b>!!!`);
   $(".baby100").html(`- 宝宝百日纪念：<b>${formatDate('2022-09-27', 100)}</b>!!!`);
   $(".baby1k").html(`- 宝宝千日纪念：<b>${formatDate('2022-09-27', 1000)}</b>!!!`);
@@ -83,8 +83,8 @@ const formatDate = (dt, count, isLocal) => {
   if ((!dt || count) && !isLocal) return `${formatYear}年${formatMonth}月${formatDay}日`;
   if (isLocal) return `${formatYear}-${formatMonth}-${formatDay}`;
   return {
-    year: formatYear == '00' ? '' : formatYear, 
-    month: formatMonth == '00' ? '' : formatMonth, 
+    year: formatYear == '00' ? '' : formatYear,
+    month: formatMonth == '00' ? '' : formatMonth,
     day: formatDay == '00' ? '' : formatDay
   };
 }
@@ -93,7 +93,7 @@ const formatDate = (dt, count, isLocal) => {
  * @params num === 要转换的数字
  * @return 汉字
  * */
-const toChinesNum = (num) =>  {
+const toChinesNum = (num) => {
   const changeNum = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九']
   const unit = ['', '十', '百', '千', '万']
   num = parseInt(num)
