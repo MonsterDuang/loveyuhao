@@ -21,7 +21,7 @@ $("#calc").on("click", () => {
       curmonth = 1;
     }
     const ca = Number(curamount) + Number(income) + Number(deposit) * rate - Number(payout);
-    const caa = ca.toString().split("");
+    const caa = Math.floor(ca).toString().split("");
     const curdeposit = caa[1] >= 5 ? (`${caa[0]}5`).padEnd(caa.length, "0") : (caa[0]).padEnd(caa.length, "0");
     const alldeposit = Number(deposit) + Number(curdeposit);
     const nextinterest = alldeposit * rate;
