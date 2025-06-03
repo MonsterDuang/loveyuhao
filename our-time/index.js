@@ -64,7 +64,7 @@ $(() => {
     $("#result2").text("");
   });
   $(".copyright").on("click", () => {
-    location.pathname = '/loveyuhao';
+    location.pathname = '/loveyuhao/calc';
   });
 });
 const calc = (diff) => {
