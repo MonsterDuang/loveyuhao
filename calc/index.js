@@ -56,3 +56,7 @@ $("#reset").on("click", () => {
   $("#calcmonth").val("");
   $("#result").html("");
 });
+
+$(".copyright").on("click", () => {
+  location.pathname = '/loveyuhao';
+});
